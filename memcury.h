@@ -185,7 +185,7 @@ namespace Memcury
 
                 HMODULE hModule = NULL;
                 lstrcpyA(module, "");
-                GetModuleHandleEx(GET_MODULE_HANDLE_EX_FLAG_FROM_ADDRESS | GET_MODULE_HANDLE_EX_FLAG_UNCHANGED_REFCOUNT, (const wchar_t*)(stack.AddrPC.Offset), &hModule);
+                GetModuleHandleEx(GET_MODULE_HANDLE_EX_FLAG_FROM_ADDRESS | GET_MODULE_HANDLE_EX_FLAG_UNCHANGED_REFCOUNT, (LPCWSTR)(stack.AddrPC.Offset), &hModule);
 
                 if (hModule != NULL)
                     GetModuleFileNameA(hModule, module, 256);
